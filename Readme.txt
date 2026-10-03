@@ -1,12 +1,25 @@
-Author: AI25MTECH14008
-Project: Parallel Connected Components Comupatation
+# Parallel Connected Components Computation
+
+**Author:** AI25MTECH14008  
+**Course:** Parallel & Concurrent Programming  
+**Project:** Parallel Connected Components Computation
 
 ---
 
-1. DIRECTORY STRUCTURE
+## 1. Project Overview
+
+This project implements and compares two parallel algorithms for computing **Connected Components (CC)** in an undirected graph:
+
+- **Hybrid Algorithm (BFS + Shiloach-Vishkin)**
+- **Parallel Disjoint Set Union (DSU)**
+
+The algorithms are evaluated using synthetic graphs under different graph sizes, graph structures, edge densities, component distributions, and thread configurations.
 
 ---
 
+## 2. Directory Structure
+
+```text
 PCP_Project/
 │
 ├── algorithms/
@@ -37,7 +50,7 @@ PCP_Project/
 ├── utils/
 │   └── Logger.hpp
 │
-├── logs/                         # Generated after execution
+├── logs/
 │   ├── exp1_size/
 │   ├── exp2_type/
 │   ├── exp3_density/
@@ -56,159 +69,253 @@ PCP_Project/
 │       └── exp5_speedup_vs_threads.png
 │
 ├── compare.exe
-└── readme.txt
+└── README.md
+```
 
 ---
 
-2. PROJECT DESCRIPTION
+## 3. Algorithms
+
+### Hybrid BFS + Shiloach-Vishkin
+
+The Hybrid algorithm combines:
+
+- **Parallel BFS** for processing large connected components.
+- **Shiloach-Vishkin (SV)** for processing the remaining graph.
+
+The SV implementation uses:
+
+- Parallel hooking
+- Pointer jumping
+- Path compression
+
+### Parallel DSU
+
+The Parallel Disjoint Set Union implementation uses:
+
+- Parallel edge processing
+- Atomic **Compare-and-Swap (CAS)** operations
+- Path compression
+- Concurrent union operations
 
 ---
 
-This project implements and compares two parallel algorithms for
-computing Connected Components (CC):
+## 4. Compilation
 
-* Hybrid Algorithm (BFS + Shiloach-Vishkin)
-* Parallel Disjoint Set Union (DSU)
+Open a terminal in the project directory and run:
 
-The evaluation is done using synthetic graphs under different conditions.
-
----
-
-3. COMPILATION INSTRUCTIONS
-
----
-
-Open terminal in project directory and run:
-
-clang++ -std=c++20 -O2 -pthread 
-experiments/Src_Prjt-AI25MTECH14008-compare.cpp 
-graph/Graph.cpp 
-generator/SyntheticGenerator.cpp 
-algorithms/bfs_sv/Src_Prjt-AI25MTECH14008-Hybrid.cpp 
-algorithms/dsu/Src_Prjt-AI25MTECH14008-DSU.cpp 
+```bash
+clang++ -std=c++20 -O2 -pthread \
+experiments/Src_Prjt-AI25MTECH14008-compare.cpp \
+graph/Graph.cpp \
+generator/SyntheticGenerator.cpp \
+algorithms/bfs_sv/Src_Prjt-AI25MTECH14008-Hybrid.cpp \
+algorithms/dsu/Src_Prjt-AI25MTECH14008-DSU.cpp \
 -o compare
+```
+
+This generates the executable:
+
+```text
+compare
+```
 
 ---
 
-4. RUNNING THE PROGRAM
+## 5. Running the Program
 
----
+Run all experiments using:
 
-Run all experiments:
-
+```bash
 ./compare
+```
 
-This will automatically execute all 5 experiments and generate logs.
-
----
-
-5. EXPERIMENTS PERFORMED
+The program automatically executes all five experiments and generates the corresponding log files.
 
 ---
 
-1. Runtime vs Graph Size
-2. Runtime vs Graph Type
-3. Runtime vs Density
-4. Runtime vs Component Distribution
-5. Speedup vs Threads
+## 6. Experiments Performed
 
-Each configuration is executed multiple times and averaged.
+The following experiments are performed:
+
+### Experiment 1 — Runtime vs Graph Size
+
+Measures the runtime of both algorithms as the number of graph nodes increases.
+
+### Experiment 2 — Runtime vs Graph Type
+
+Compares performance across different graph structures.
+
+### Experiment 3 — Runtime vs Density
+
+Studies the effect of increasing edge density on algorithm performance.
+
+### Experiment 4 — Runtime vs Component Distribution
+
+Evaluates performance for different connected-component distributions.
+
+### Experiment 5 — Speedup vs Threads
+
+Measures parallel scalability by varying the number of threads.
+
+Each configuration is executed multiple times and the results are averaged.
 
 ---
 
-6. LOG FILES
+## 7. Log Files
 
----
+Experiment logs are stored under:
 
-Logs are stored in:
-
+```text
 logs/<experiment_name>/runtime.json
+```
 
-Each entry contains:
+Each log entry contains:
 
-* nodes
-* edges
-* graph type
-* parameter (size/density/threads)
-* run number
-* hybrid runtime
-* dsu runtime
+- Number of nodes
+- Number of edges
+- Graph type
+- Experiment parameter
+- Run number
+- Hybrid runtime
+- DSU runtime
+
+The logs are organized as:
+
+```text
+logs/
+├── exp1_size/
+├── exp2_type/
+├── exp3_density/
+├── exp4_components/
+└── exp5_threads/
+```
 
 ---
 
-7. GENERATING GRAPHS
+## 8. Generating Graphs
 
----
+Navigate to the visualization directory:
 
-Navigate to visualization/ and run:
+```bash
+cd visualization
+```
 
+Run:
+
+```bash
 python stats.py
+```
 
-This will generate all plots in:
+This generates the plots inside:
 
+```text
 visualization/results/
+```
+
+The generated results include:
+
+- Runtime vs Graph Size
+- Runtime vs Graph Type
+- Runtime vs Density
+- Runtime vs Component Distribution
+- Speedup vs Number of Threads
 
 ---
 
-8. OUTPUT FILES
+## 9. Parallel Implementation
+
+Parallelism is implemented using a custom `parallel_for` utility.
+
+### Work Distribution
+
+- Work is divided into chunks.
+- Each thread processes its assigned chunk independently.
+- Threads are created using `std::thread`.
+- Synchronization is performed using `join()`.
+
+### Hybrid Algorithm
+
+The Hybrid implementation uses:
+
+- Parallel BFS frontier processing
+- Parallel Shiloach-Vishkin hooking
+- Parallel pointer compression
+
+### Parallel DSU
+
+The DSU implementation uses:
+
+- Parallel edge processing
+- Atomic CAS for concurrent union operations
+- Path compression for efficient component finding
 
 ---
 
-* logs/            → Raw experiment logs
-* results/         → Generated plots (.png)
-* compare.exe      → Executable
+## 10. Requirements
 
----
+### C++
 
-9. PARALLEL IMPLEMENTATION DETAILS
+- C++20 compatible compiler
+- `clang++`
+- POSIX thread support
 
----
+### Python
 
-Parallelism is implemented using a custom parallel_for:
+- Python 3
+- Matplotlib
 
-* Work is divided into chunks
-* Each thread processes a chunk independently
-* Threads are created using std::thread
-* Synchronization is done using join
+Install Matplotlib using:
 
-Hybrid Algorithm:
-
-* Parallel BFS (frontier processing)
-* Parallel SV (hooking + compression)
-
-DSU:
-
-* Parallel edge processing
-* Atomic CAS for union operations
-* Path compression for efficiency
-
----
-
-10. REQUIREMENTS
-
----
-
-* C++20 compatible compiler (clang++)
-* Python 3
-
-Python libraries:
-
-* matplotlib
-
-Install using:
+```bash
 pip install matplotlib
+```
 
 ---
 
-11. NOTES
+## 11. Output
+
+The project generates:
+
+```text
+logs/
+```
+
+Raw experiment logs.
+
+```text
+visualization/results/
+```
+
+Generated performance plots.
+
+```text
+compare
+```
+
+Compiled executable.
 
 ---
 
-* Graphs are generated internally (no dataset required)
-* Logs and directories are created automatically
-* Results are reproducible using fixed seeds
-* Run experiments before generating plots
+## 12. Notes
+
+- Graphs are generated internally; no external dataset is required.
+- Log directories are created automatically during execution.
+- Results are reproducible using fixed random seeds.
+- Run the experiments before generating visualization plots.
+- The project is designed to compare the performance and scalability of the two parallel connected-components algorithms.
 
 ---
 
-END OF FILE
+## 13. Project Objective
+
+The primary objective of this project is to implement and experimentally compare two parallel algorithms for connected-components computation and analyze their performance under different graph and parallel execution conditions.
+
+---
+
+## Author
+
+**AI25MTECH14008**
+
+**Parallel & Concurrent Programming**  
+**IIT Hyderabad**
