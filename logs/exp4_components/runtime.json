@@ -1,0 +1,9 @@
+{"experiment":"exp4_components","nodes":25000,"edges":5004509,"graph_type":"few_large","param":0,"run":0,"hybrid_time":110,"dsu_time":1591}
+{"experiment":"exp4_components","nodes":25000,"edges":5007694,"graph_type":"few_large","param":0,"run":1,"hybrid_time":87,"dsu_time":1539}
+{"experiment":"exp4_components","nodes":25000,"edges":5007080,"graph_type":"few_large","param":0,"run":2,"hybrid_time":98,"dsu_time":1762}
+{"experiment":"exp4_components","nodes":25000,"edges":505440,"graph_type":"many_small","param":0,"run":0,"hybrid_time":10,"dsu_time":981}
+{"experiment":"exp4_components","nodes":25000,"edges":506007,"graph_type":"many_small","param":0,"run":1,"hybrid_time":11,"dsu_time":1131}
+{"experiment":"exp4_components","nodes":25000,"edges":505513,"graph_type":"many_small","param":0,"run":2,"hybrid_time":13,"dsu_time":954}
+{"experiment":"exp4_components","nodes":54990,"edges":7524492,"graph_type":"balanced","param":0,"run":0,"hybrid_time":154,"dsu_time":2158}
+{"experiment":"exp4_components","nodes":54990,"edges":7530753,"graph_type":"balanced","param":0,"run":1,"hybrid_time":158,"dsu_time":2200}
+{"experiment":"exp4_components","nodes":54990,"edges":7528604,"graph_type":"balanced","param":0,"run":2,"hybrid_time":163,"dsu_time":2224}

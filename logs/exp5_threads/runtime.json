@@ -1,0 +1,15 @@
+{"experiment":"exp5_threads","nodes":55000,"edges":10013370,"graph_type":"mixed_dense","param":1,"run":0,"hybrid_time":576,"dsu_time":2069}
+{"experiment":"exp5_threads","nodes":55000,"edges":10017475,"graph_type":"mixed_dense","param":1,"run":1,"hybrid_time":486,"dsu_time":2080}
+{"experiment":"exp5_threads","nodes":55000,"edges":10016618,"graph_type":"mixed_dense","param":1,"run":2,"hybrid_time":622,"dsu_time":2473}
+{"experiment":"exp5_threads","nodes":55000,"edges":10013370,"graph_type":"mixed_dense","param":2,"run":0,"hybrid_time":285,"dsu_time":1925}
+{"experiment":"exp5_threads","nodes":55000,"edges":10017475,"graph_type":"mixed_dense","param":2,"run":1,"hybrid_time":246,"dsu_time":1735}
+{"experiment":"exp5_threads","nodes":55000,"edges":10016618,"graph_type":"mixed_dense","param":2,"run":2,"hybrid_time":268,"dsu_time":1732}
+{"experiment":"exp5_threads","nodes":55000,"edges":10013370,"graph_type":"mixed_dense","param":4,"run":0,"hybrid_time":160,"dsu_time":1846}
+{"experiment":"exp5_threads","nodes":55000,"edges":10017475,"graph_type":"mixed_dense","param":4,"run":1,"hybrid_time":145,"dsu_time":2251}
+{"experiment":"exp5_threads","nodes":55000,"edges":10016618,"graph_type":"mixed_dense","param":4,"run":2,"hybrid_time":166,"dsu_time":2211}
+{"experiment":"exp5_threads","nodes":55000,"edges":10013370,"graph_type":"mixed_dense","param":8,"run":0,"hybrid_time":86,"dsu_time":2907}
+{"experiment":"exp5_threads","nodes":55000,"edges":10017475,"graph_type":"mixed_dense","param":8,"run":1,"hybrid_time":74,"dsu_time":3076}
+{"experiment":"exp5_threads","nodes":55000,"edges":10016618,"graph_type":"mixed_dense","param":8,"run":2,"hybrid_time":96,"dsu_time":2753}
+{"experiment":"exp5_threads","nodes":55000,"edges":10013370,"graph_type":"mixed_dense","param":12,"run":0,"hybrid_time":79,"dsu_time":3496}
+{"experiment":"exp5_threads","nodes":55000,"edges":10017475,"graph_type":"mixed_dense","param":12,"run":1,"hybrid_time":201,"dsu_time":4260}
+{"experiment":"exp5_threads","nodes":55000,"edges":10016618,"graph_type":"mixed_dense","param":12,"run":2,"hybrid_time":188,"dsu_time":3302}

@@ -1,0 +1,9 @@
+{"experiment":"exp2_type","nodes":55000,"edges":10013370,"graph_type":"mixed_dense","param":0,"run":0,"hybrid_time":150,"dsu_time":3654}
+{"experiment":"exp2_type","nodes":55000,"edges":10017475,"graph_type":"mixed_dense","param":0,"run":1,"hybrid_time":179,"dsu_time":4183}
+{"experiment":"exp2_type","nodes":55000,"edges":10016618,"graph_type":"mixed_dense","param":0,"run":2,"hybrid_time":184,"dsu_time":3860}
+{"experiment":"exp2_type","nodes":42500,"edges":5024344,"graph_type":"mixed_sparse","param":0,"run":0,"hybrid_time":93,"dsu_time":2357}
+{"experiment":"exp2_type","nodes":42500,"edges":5027625,"graph_type":"mixed_sparse","param":0,"run":1,"hybrid_time":102,"dsu_time":1832}
+{"experiment":"exp2_type","nodes":42500,"edges":5027015,"graph_type":"mixed_sparse","param":0,"run":2,"hybrid_time":104,"dsu_time":2028}
+{"experiment":"exp2_type","nodes":54990,"edges":7524492,"graph_type":"balanced","param":0,"run":0,"hybrid_time":158,"dsu_time":2523}
+{"experiment":"exp2_type","nodes":54990,"edges":7530753,"graph_type":"balanced","param":0,"run":1,"hybrid_time":144,"dsu_time":2718}
+{"experiment":"exp2_type","nodes":54990,"edges":7528604,"graph_type":"balanced","param":0,"run":2,"hybrid_time":123,"dsu_time":2158}

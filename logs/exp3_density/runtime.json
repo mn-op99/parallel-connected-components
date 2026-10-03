@@ -1,0 +1,9 @@
+{"experiment":"exp3_density","nodes":55000,"edges":4014656,"graph_type":"density","param":0.02,"run":0,"hybrid_time":67,"dsu_time":2697}
+{"experiment":"exp3_density","nodes":55000,"edges":4018477,"graph_type":"density","param":0.02,"run":1,"hybrid_time":76,"dsu_time":2182}
+{"experiment":"exp3_density","nodes":55000,"edges":4015867,"graph_type":"density","param":0.02,"run":2,"hybrid_time":99,"dsu_time":2341}
+{"experiment":"exp3_density","nodes":55000,"edges":10013370,"graph_type":"density","param":0.05,"run":0,"hybrid_time":191,"dsu_time":3526}
+{"experiment":"exp3_density","nodes":55000,"edges":10017475,"graph_type":"density","param":0.05,"run":1,"hybrid_time":184,"dsu_time":4210}
+{"experiment":"exp3_density","nodes":55000,"edges":10016618,"graph_type":"density","param":0.05,"run":2,"hybrid_time":176,"dsu_time":3539}
+{"experiment":"exp3_density","nodes":55000,"edges":20018481,"graph_type":"density","param":0.1,"run":0,"hybrid_time":311,"dsu_time":3742}
+{"experiment":"exp3_density","nodes":55000,"edges":20016936,"graph_type":"density","param":0.1,"run":1,"hybrid_time":359,"dsu_time":3771}
+{"experiment":"exp3_density","nodes":55000,"edges":20011081,"graph_type":"density","param":0.1,"run":2,"hybrid_time":340,"dsu_time":3632}
